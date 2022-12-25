@@ -1,0 +1,35 @@
+.navbar {
+  width: 410px;
+  height: 42px;
+  display: flex;
+  /* grid-template-columns: auto auto auto auto; */
+  /* column-gap: 50px; */
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+}
+
+.nav-item {
+  font-family: var(--primary-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+.nav-item:hover {
+  color: var(--color-secondary);
+}
+.delivery-btn {
+  width: 145px;
+  height: 42px;
+  font-weight: 700;
+  background: var(--color-secondary);
+  cursor: pointer;
+}
+.delivery-btn:hover {
+  background: none;
+}

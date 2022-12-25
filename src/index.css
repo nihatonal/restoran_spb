@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Circe";
+  src: url("../src/assets/Circe/Circe-Regular.eot");
+  src: url("../src/assets/Circe/Circe-Regular.eot") format("embedded-opentype"),
+    url("../src/assets/Circe/Circe-Regular.woff") format("woff"),
+    url("../src/assets/Circe/Circe-Regular.ttf") format("truetype");
+}
+
+:root {
+  --color-primary: #333333;
+  --color-secondary: #b59571;
+  --color-secondary: #b59571;
+  --bg-primary: #5b5b5b;
+  --primary-font-family: "Circe";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
