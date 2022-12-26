@@ -9,6 +9,7 @@
   position: absolute;
   right: 50px;
   top: 10px;
+  transition: all 750ms;
 }
 
 .nav-item {

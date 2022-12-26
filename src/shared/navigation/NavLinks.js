@@ -30,7 +30,7 @@ function NavLinks(props) {
             >
                 Оплата
             </NavLink>
-            <button className='nav-item delivery-btn'>Бронь столика</button>
+            <button className='nav-item delivery-btn' onClick={props.onClick}>Бронь столика</button>
         </div>
     );
 }
