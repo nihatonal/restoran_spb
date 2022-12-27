@@ -22,12 +22,20 @@ function MainNavigation(props) {
         <div className='header'>
             <SideNavBar
                 openDrawerHandler={openDrawerHandler}
+                closeDrawer={closeDrawerHandler}
                 drawerIsOpen={drawerIsOpen}
+                onClick={() => {
+                    setBookingIsOpen(true)
+                    openDrawerHandler(false)
+                }}
                 className={bookingIsOpen ? 'hide-sidebar' : null}
             />
-            <NavLinks className={bookingIsOpen ? 'hide-navlinks' : null} onClick={openBookHandler} />
+            <NavLinks
+                className={bookingIsOpen ? 'hide-navlinks' : null}
+                onClick={openBookHandler}
+            />
             <Modal showModal={bookingIsOpen} >
-                <BookingForm />
+                <BookingForm Close={() => setBookingIsOpen(false)} />
             </Modal>
         </div>
     );

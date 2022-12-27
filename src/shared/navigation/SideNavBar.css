@@ -41,6 +41,11 @@
   font-weight: 700;
   font-size: 2rem;
   line-height: 120%;
+  width: 237px;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sidebar-navlinks .delivery-btn {
   width: 237px;

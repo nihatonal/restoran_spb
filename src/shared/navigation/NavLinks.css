@@ -1,5 +1,5 @@
 .navbar {
-  width: 410px;
+  /* width: 410px; */
   height: 42px;
   display: flex;
   /* grid-template-columns: auto auto auto auto; */
@@ -20,17 +20,22 @@
   line-height: 140%;
   color: #ffffff;
   transition: all 0.2s;
+  padding: 10px 20px;
 }
 .nav-item:hover {
-  color: var(--color-secondary);
+  background: var(--color-secondary);
+  font-weight: 700;
 }
 .delivery-btn {
   width: 145px;
   height: 42px;
-  font-weight: 700;
-  background: var(--color-secondary);
+  font-weight: 400;
+  background: none;
   cursor: pointer;
+  padding: 10px 20px;
+  color: #fff;
 }
 .delivery-btn:hover {
-  background: none;
+  background: var(--color-secondary);
+  font-weight: 700;
 }

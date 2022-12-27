@@ -1,0 +1,28 @@
+.delivery-btns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 414px;
+  margin-left: 220px;
+  margin-top: 60px;
+}
+.delivery_btn {
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--color-primary);
+  width: 163px;
+  height: 58px;
+  cursor: pointer;
+  background: transparent;
+}
+.delivery_btn:last-child {
+  width: 221px;
+  height: 58px;
+}
+.delivery_btn:hover {
+  color: #fff;
+  background-color: var(--color-secondary);
+}

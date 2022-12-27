@@ -3,15 +3,18 @@ import './App.css';
 
 import MainNavigation from "./shared/navigation/MainNavigation";
 import Main from "./Main/page/Main";
+import CartProvider from './shared/context/CartContext';
 function App() {
   return (
-    <BrowserRouter>
-      <MainNavigation />
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-      </Routes>
-      {/* <Footer /> */}
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <MainNavigation />
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+        </Routes>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

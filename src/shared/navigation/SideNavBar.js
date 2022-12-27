@@ -19,7 +19,9 @@ function SideNavBar(props) {
             </div>
             <NavLinks
                 style={props.drawerIsOpen ? { opacity: '1' } : null}
-                className='sidebar-navlinks' />
+                className='sidebar-navlinks'
+                onClick={props.onClick}
+                closeDrawer={props.closeDrawer} />
             <SocialBar />
         </div>
     );

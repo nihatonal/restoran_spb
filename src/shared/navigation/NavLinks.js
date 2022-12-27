@@ -11,6 +11,7 @@ function NavLinks(props) {
                     isActive ? "nav-item active-nav-item" : "nav-item"
                 }
                 to="/menu"
+                onClick={props.closeDrawer}
             >
                 Меню
             </NavLink>
@@ -19,6 +20,7 @@ function NavLinks(props) {
                     isActive ? "nav-item active-nav-item" : "nav-item"
                 }
                 to="/delivery"
+                onClick={props.closeDrawer}
             >
                 Доставка
             </NavLink>
@@ -27,6 +29,7 @@ function NavLinks(props) {
                     isActive ? "nav-item active-nav-item" : "nav-item"
                 }
                 to="/pay"
+                onClick={props.closeDrawer}
             >
                 Оплата
             </NavLink>
