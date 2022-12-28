@@ -2,11 +2,10 @@
   width: 120px;
   height: 100vh;
   background: var(--color-primary);
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 15px 0;
   transition: all 1s;
   z-index: 85;
@@ -17,6 +16,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+.sidebar-header img {
+  margin-bottom: 20px;
 }
 
 .open_sidebar {
@@ -32,6 +34,7 @@
   opacity: 0;
   transition: all 0.5s;
   transition-delay: 250ms;
+  margin: 150px 0;
 }
 .open_sidebar .sidebar-navlinks {
   opacity: 1;
