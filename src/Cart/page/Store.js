@@ -1,20 +1,30 @@
-
-import { productsArray } from '../components/productStore';
+import React, { useState, useEffect } from 'react';
+import { productsData } from '../../assets/productsData';
 import ProductCard from '../components/ProductCard';
+import ProductsBar from '../components/ProductsBar';
 // [{... }, {... }, {... }]
+
+import './Store.css';
 function Store() {
+    const [foods, setFoods] = useState([]);
+    const [foodType, setFoodType] = useState('breakfast');
+
+    useEffect(() => {
+        setFoods(productsData.filter((x) => x.type === foodType))
+    }, [foodType]);
+
 
     return (
-        <>
-            <h1 align="center" className="p-3">Welcome to the store!</h1>
-            <div xs={1} md={3} className="g-4">
-                {productsArray.map((product, idx) => (
-                    <div align="center" key={idx}>
-                        <ProductCard product={product} />
-                    </div>
+        <div className='products-container'>
+            <ProductsBar />
+            <div className='products-wrapper'>
+                {productsData && foods.map((product, idx) => (
+
+                    <ProductCard product={product} />
+
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

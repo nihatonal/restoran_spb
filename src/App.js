@@ -6,6 +6,8 @@ import Main from "./Main/page/Main";
 import CartProvider from './shared/context/CartContext';
 import Footer from "./shared/footer/Footer";
 
+import Store from "./Cart/page/Store";
+
 function App() {
   return (
     <CartProvider>
@@ -13,6 +15,7 @@ function App() {
         <MainNavigation />
         <Routes>
           <Route exact path="/" element={<Main />} />
+          <Route exact path="/store" element={<Store />} />
         </Routes>
         <Footer />
       </BrowserRouter>

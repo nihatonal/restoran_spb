@@ -35,10 +35,10 @@ function Contact(props) {
                 </div>
                 <div className="contact-content-right">
                     <div className="contact-content-right-wrapper">
-                        <a href="https://www.google.com/maps/place/Severnaya+Doroga,+11,+Sankt-Peterburg,+197110/data=!4m2!3m1!1s0x4696369463de2eb7:0xe6fc5dbc72434a9c?sa=X&ved=2ahUKEwjUs8ir9Jn8AhU9DRAIHWMUDNsQ8gF6BAgJEAE" target='_blank' className="contact-item">
+                        <a href="https://www.google.com/maps/place/Severnaya+Doroga,+11,+Sankt-Peterburg,+197110/data=!4m2!3m1!1s0x4696369463de2eb7:0xe6fc5dbc72434a9c?sa=X&ved=2ahUKEwjUs8ir9Jn8AhU9DRAIHWMUDNsQ8gF6BAgJEAE" target='_blank' rel="noreferrer" className="contact-item">
                             <IoLocationSharp className='contact-icon' /> Severnaya Doroga, 11, Sankt-Peterburg, 197110
                         </a>
-                        <a href="tel:+7 (921) 777-77-77" target='_blank' className="contact-item">
+                        <a href="tel:+7 (921) 777-77-77" className="contact-item">
                             <BsFillTelephoneFill className='contact-icon' /> +7 (921) 777-77-77
                         </a>
                         <p className="title-work-schedule">Время работы</p>

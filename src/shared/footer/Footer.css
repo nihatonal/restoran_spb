@@ -20,3 +20,15 @@
   line-height: 140%;
   color: #ffffff;
 }
+
+.footer-cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.footer-card-master {
+  color: white;
+  font-size: 34px;
+}

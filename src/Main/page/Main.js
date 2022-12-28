@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import Menu from '../components/Menu';
 import Delivery from '../components/Delivery';
-import Contact from '../components/Contact';
+import Contact from '../../shared/components/Contact';
 
 import './Main.css';
 function Main(props) {

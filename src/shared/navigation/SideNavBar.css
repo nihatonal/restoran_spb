@@ -63,6 +63,10 @@
   color: var(--color-primary);
   box-shadow: 0 0 15px var(--color-secondary);
 }
+.sidebar_wrapper .socialbar-wrapper {
+  opacity: 0;
+  transition: all 0.3s;
+}
 .open_sidebar .socialbar-wrapper {
   width: 160px;
   height: 40px;
@@ -70,4 +74,5 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  opacity: 1;
 }
