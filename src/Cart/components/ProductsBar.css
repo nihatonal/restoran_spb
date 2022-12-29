@@ -1,3 +1,9 @@
+.product-btns-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 36px 0 52px;
+  padding: 0 10px;
+}
 .product-btn {
   font-family: "Circe";
   font-style: normal;
@@ -8,8 +14,13 @@
   background: transparent;
   cursor: pointer;
   margin-right: 40px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
 }
-.product-btns-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.product-btn:hover {
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+.active-btn {
+  border-bottom: 3px solid var(--color-secondary);
 }

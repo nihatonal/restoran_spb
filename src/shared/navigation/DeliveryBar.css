@@ -1,0 +1,47 @@
+.delivery-bar-wrapper {
+  width: 230px;
+  height: 26px;
+  margin-left: auto;
+  margin-right: 100px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.delivery-bar-wrapper p {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: right;
+  color: #333333;
+}
+.delivery-bar-wrapper img {
+  cursor: pointer;
+}
+.delivery-cart-wrapper {
+  display: grid;
+  position: relative;
+  cursor: pointer;
+}
+.delivery-cart-wrapper p {
+  position: absolute;
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  top: -2px;
+  left: 12px;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delivery-cart {
+  font-size: 24px;
+}
