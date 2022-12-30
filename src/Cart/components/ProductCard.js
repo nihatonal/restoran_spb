@@ -9,7 +9,7 @@ function ProductCard(props) { // props.product is the product we are selling
     const product = props.product;
     const cart = useContext(CartContext);
     const productQuantity = cart.getProductQuantity(product.id);
-    //console.log(cart.items);
+    // console.log(cart.items);
 
     function getFileName(path, isExtension) {
 
@@ -24,7 +24,7 @@ function ProductCard(props) { // props.product is the product we are selling
         return (isExtension) ? fullFileName : fullFileName.slice(0, fullFileName.lastIndexOf("."));
     }
     return (
-        <div className='productcard-wrapper'>
+        <div className='productcard-wrapper' id={product.id}>
             <NavLink to={`/delivery/product/${getFileName(product.title)}`} onClick={props.selectedProduct}>
                 <img src={product.image} alt={product.title} />
             </NavLink>

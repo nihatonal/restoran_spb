@@ -1,4 +1,219 @@
 .product-container {
-    width:856px;
-    border: 1px solid red;
+  width: 100%;
+  margin-top: 8px;
+}
+.product-wrapper {
+  margin-left: 210px;
+  width: 856px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.product-thumbnail {
+  width: 416px;
+  height: 317px;
+  position: relative;
+  margin-right: 134px;
+}
+/* d */
+.product-thumbnail .image-gallery-slides {
+  width: 416px;
+
+  margin: 0 auto;
+}
+.image-gallery-slide {
+  object-fit: contain;
+}
+
+.product-thumbnail .image-gallery-thumbnails {
+  padding: 0;
+}
+.product-thumbnail .image-gallery-thumbnails-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.product-thumbnail .image-gallery-thumbnail-inner {
+  width: 122px;
+  height: 93px;
+}
+
+.product-thumbnail .image-gallery-thumbnail-image {
+  width: 122px;
+  height: 93px;
+}
+.product-thumbnail .image-gallery-thumbnail {
+  border: none;
+  cursor: pointer;
+  width: 122px;
+  height: 93px;
+}
+
+.product-line {
+  opacity: 0.3;
+  height: 1px;
+  background-color: var(--color-primary);
+  display: block;
+  margin: 35px 0;
+}
+.product-line:nth-last-child(2) {
+  margin: 45px 0 35px;
+}
+.product-title {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--color-primary);
+}
+.product-price-info {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--color-primary);
+}
+.product-price-info span {
+  font-size: 16px;
+  line-height: 140%;
+  opacity: 0.6;
+}
+
+.product-quantity {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--color-primary);
+  margin: 30px 0 25px;
+}
+.product-addition {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 20px;
+}
+.product-addition .product-title {
+  margin-bottom: 10px;
+}
+.addition-item-name {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+.addition-item-price {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--color-primary);
+}
+
+.product-quantity-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.product_content .productcard-btn {
+  height: 58px;
+  width: 151px;
+  margin-left: 20px;
+}
+.product_content .productcard-btn-count {
+  width: 84px;
+  height: 58px;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--color-primary);
+  margin-left: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+.product_content .count_prodcut button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product_content .count_prodcut .product-count-arrow:first-child {
+  margin-top: 5px;
+}
+
+.addition-item {
+  width: 306px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.addition-item-input {
+  position: absolute;
+  right: 0;
+  top: 18px;
+}
+/* Hide the browser's default checkbox */
+.addition-item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+/* On mouse-over, add a grey background color */
+/* .addition-item:hover input ~ .checkmark {
+    background-color: #ccc;
+  } */
+
+/* When the checkbox is checked, add a blue background */
+.addition-item input:checked ~ .checkmark {
+  background-color: var(--color-secondary);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.addition-item input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.addition-item .checkmark:after {
+  left: 8.5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

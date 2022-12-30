@@ -4,6 +4,7 @@ export const productsData = [
         title: "Яичница-глазунья из трех яиц",
         "image": require("./images/friedeggs.png"),
         type: 'breakfast',
+        portion: 350,
         price: 250
     },
     {
@@ -11,6 +12,7 @@ export const productsData = [
         title: "Омлет из трёх яиц",
         "image": require("./images/omlet.png"),
         type: 'breakfast',
+        portion: 350,
         price: 250
     },
     {
@@ -18,6 +20,7 @@ export const productsData = [
         title: "Домашние сырники",
         "image": require("./images/cheesecakes.png"),
         type: 'breakfast',
+        portion: 350,
         price: 490
     },
     {
@@ -25,6 +28,7 @@ export const productsData = [
         title: "Блины",
         "image": require("./images/pancake.png"),
         type: 'breakfast',
+        portion: 400,
         price: 250
     },
     {
@@ -32,6 +36,7 @@ export const productsData = [
         title: "Каша c ягодами и кедровыми орехами",
         "image": require("./images/buckwheat.png"),
         type: 'breakfast',
+        portion: 450,
         price: 450
     },
     {
@@ -39,6 +44,7 @@ export const productsData = [
         title: "Скрэмбл",
         "image": require("./images/scrambler.png"),
         type: 'breakfast',
+        portion: 300,
         price: 290
     },
     {
@@ -46,6 +52,7 @@ export const productsData = [
         title: "Яйцо Бенедикт с лососем",
         "image": require("./images/benedict_solmon.png"),
         type: 'breakfast',
+        portion: 350,
         price: 850
     },
     {
@@ -53,6 +60,7 @@ export const productsData = [
         title: "Яйцо Бенедикт с беконом",
         "image": require("./images/benedict_bacon.png"),
         type: 'breakfast',
+        portion: 350,
         price: 650
     },
     {
@@ -60,6 +68,7 @@ export const productsData = [
         title: "Гречневая каша с авокадо, яйцом пашот и пармезаном",
         "image": require("./images/porridge.png"),
         type: 'breakfast',
+        portion: 350,
         price: 490
     },
     {
@@ -67,6 +76,7 @@ export const productsData = [
         title: "Кобб – салат с лососем",
         "image": require("./images/cobb_solmon_salad.png"),
         type: 'breakfast',
+        portion: 350,
         price: 890
     },
     {
@@ -74,6 +84,7 @@ export const productsData = [
         title: "Кобб – салат с креветками",
         "image": require("./images/cobb_shrimp_salad.png"),
         type: 'breakfast',
+        portion: 350,
         price: 960
     },
     {
@@ -81,6 +92,7 @@ export const productsData = [
         title: "Канапе с колбасой и сыром",
         "image": require("./images/canape_with _sausage_and_cheese.jpg"),
         type: 'cold_snakes',
+        portion: 350,
         price: 450
     },
     {
@@ -88,6 +100,7 @@ export const productsData = [
         title: "Лаваша с курицей и плавленым сыром",
         "image": require("./images/lavash_appetizer_with_chicken_and_melted_cheese.jpg"),
         type: 'cold_snakes',
+        portion: 350,
         price: 320
     },
     {
@@ -95,6 +108,7 @@ export const productsData = [
         title: "Роллы Сельдь под шубой",
         "image": require("./images/rolls_herring_under_a_fur_coat.jpg"),
         type: 'cold_snakes',
+        portion: 350,
         price: 460
     },
     {
@@ -102,6 +116,7 @@ export const productsData = [
         title: "Помидоры по-итальянски",
         "image": require("./images/italian_style_tomatoes.jpg"),
         type: 'cold_snakes',
+        portion: 350,
         price: 520
     },
     {
@@ -109,6 +124,7 @@ export const productsData = [
         title: "Сырные 'Мандаринки' к Новому году",
         "image": require("./images/Cheese _Tangerines_for_the_New_Year.jpg"),
         type: 'cold_snakes',
+        portion: 350,
         price: 520
     },
     {
@@ -116,6 +132,7 @@ export const productsData = [
         title: "Помидоры и базилик",
         "image": require("./images/Tomatoes_and_basil.jpg"),
         type: 'bruschettas',
+        portion: 350,
         price: 320
     },
     {
@@ -123,6 +140,7 @@ export const productsData = [
         title: "Моцарелла и вяленые томаты",
         "image": require("./images/Mozzarella_and_Sun_Dried_Tomatoes.jpg"),
         type: 'bruschettas',
+        portion:350,
         price: 360
     },
     {
@@ -130,6 +148,7 @@ export const productsData = [
         title: "Оливковый вкус",
         "image": require("./images/Olive_flavor.jpg"),
         type: 'bruschettas',
+        portion:250,
         price: 380
     },
     {
@@ -137,6 +156,7 @@ export const productsData = [
         title: "Пряные баклажаны",
         "image": require("./images/spicy_eggplant.jpg"),
         type: 'bruschettas',
+        portion:275,
         price: 430
     },
 

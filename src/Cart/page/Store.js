@@ -19,10 +19,10 @@ function Store() {
         setFoods(productsData.filter((x) => x.type === foodType))
     }, [foodType]);
 
-    const selectedProductHandler = (e) => {
-        console.log(e.target.id)
-        setCurrentProduct(e.target.id)
-    }
+    // const selectedProductHandler = (e) => {
+    //     console.log(e.target.id)
+    //     setCurrentProduct(e.target.id)
+    // }
     return (
         <div className='products-container'>
             <ProductsBar
@@ -30,14 +30,18 @@ function Store() {
                     console.log(e.target.id)
                     setFoodType(e.target.id);
                     setActiveBtn(!activeBtn);
+                    setCurrentProduct(null)
                     navigate('/delivery')
+
                 }}
                 active={foodType}
             />
-            {currentProduct ? <Product /> : <div className='products-wrapper'>
+            {currentProduct ? <Product id={currentProduct} /> : <div className='products-wrapper'>
                 {productsData && foods.map((product, idx) => (
 
-                    <ProductCard product={product} />
+                    <ProductCard key={idx} product={product} selectedProduct={(e) => {
+                        setCurrentProduct(e.target.parentNode.parentNode.id)
+                    }} />
 
                 ))}
             </div>}
