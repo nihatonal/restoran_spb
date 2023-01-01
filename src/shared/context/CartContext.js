@@ -8,7 +8,9 @@ export const CartContext = createContext({
     addOneToCart: () => { },
     removeOneFromCart: () => { },
     deleteFromCart: () => { },
-    getTotalCost: () => { }
+    getTotalCost: () => { },
+    addAdditionsToCart: () => { },
+    removeAdditionsToCart: () => { }
 });
 
 export function CartProvider({ children }) {
@@ -28,14 +30,15 @@ export function CartProvider({ children }) {
 
     function addOneToCart(id) {
         const quantity = getProductQuantity(id);
-
+        
         if (quantity === 0) { // product is not in cart
             setCartProducts(
                 [
                     ...cartProducts,
                     {
                         id: id,
-                        quantity: 1
+                        quantity: 1,
+                        additions: []
                     }
                 ]
             )
@@ -51,6 +54,21 @@ export function CartProvider({ children }) {
             )
         }
     }
+    function addAdditionsToCart(id, arr) {
+        const x = cartProducts.filter(product => product.id === id)[0].additions
+        x.push(arr)
+        //console.log(cartProducts)
+    }
+    function removeAdditionsToCart(id, addition_id) {
+        console.log(id, addition_id);
+        const selected_product = cartProducts.filter(product => product.id === id)[0]
+        selected_product.additions = selected_product.additions.filter(function (obj) {
+            return obj.id !== addition_id;
+        });
+        //console.log(cartProducts)
+
+    }
+
 
     function removeOneFromCart(id) {
         const quantity = getProductQuantity(id);
@@ -96,7 +114,9 @@ export function CartProvider({ children }) {
         addOneToCart,
         removeOneFromCart,
         deleteFromCart,
-        getTotalCost
+        getTotalCost,
+        addAdditionsToCart,
+        removeAdditionsToCart
     }
 
     return (

@@ -18,11 +18,14 @@ function SideNavBar(props) {
                 />
             </div>
             <NavLinks
-                style={props.drawerIsOpen ? { opacity: '1' } : null}
+                style={props.drawerIsOpen ? { left: 0 } : null}
                 className='sidebar-navlinks'
                 onClick={props.onClick}
                 closeDrawer={props.closeDrawer} />
-            <SocialBar />
+            <div className='socialbar-wrapper'>
+                <SocialBar />
+            </div>
+
         </div>
     );
 }

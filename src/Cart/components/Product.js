@@ -7,15 +7,41 @@ import Arrow_down from '../../assets/icons/arrow_down.svg'
 import Thumbnails from '../../shared/UI/Thumbnails';
 import './Product.css';
 function Product(props) {
+
+    const additions_array = [
+        {
+            id: 'addition_1',
+            value: '450',
+            name: 'Тигровые креветки'
+        },
+        {
+            id: 'addition_2',
+            value: '80',
+            name: 'Томаты / паприка'
+        },
+        {
+            id: 'addition_3',
+            value: '120',
+            name: 'Бекон'
+        },
+        {
+            id: 'addition_4',
+            value: '80',
+            name: 'Сыр чеддер 30 г'
+        },
+    ]
     const cart = useContext(CartContext);
     const id = props.id;
     const productData = getProductData(id);
-    const [quantity, setQuantity] = useState(null)
+    const [quantitys, setQuantity] = useState(null);
+    const [checkedState, setCheckedState] = useState(
+        new Array(additions_array.length).fill(false)
+    );
+    const quantity_ = cart.items.filter(item => item.id === productData.id).length > 0 && cart.items.filter(x => x.id === id)[0].quantity;
+    const selected_product = cart.items.filter(item => item.id === productData.id).length > 0 ? cart.items.filter(item => item.id === productData.id)[0].additions : [];
 
-    const quantity_ = cart.items.filter(x => x.id === id)[0].quantity;
     useEffect(() => {
-        console.log(quantity_)
-        setQuantity(quantity_)
+        setQuantity(quantity_ || 0)
     }, [quantity_])
 
     const images = [
@@ -32,6 +58,30 @@ function Product(props) {
             thumbnail: `http://localhost:3000${productData.image}`,
         }
     ];
+
+
+    const checkboxHandler = (e, position) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+            index === position ? !item : item
+        );
+        console.log(updatedCheckedState)
+        setCheckedState(updatedCheckedState);
+
+        let addition;
+        if (e.target.checked) {
+            addition = {
+                id: e.target.id,
+                name: e.target.name,
+                price_additon: e.target.value
+            }
+            cart.addAdditionsToCart(id, addition);
+        } else {
+            let addition_id = e.target.id;
+            cart.removeAdditionsToCart(id, addition_id);
+        }
+
+    }
+
     return (
         <div className="product-container">
             <div className="product-wrapper">
@@ -45,7 +95,7 @@ function Product(props) {
                     <p className="product-quantity">Количество порций:</p>
                     <div className="product-quantity-wrapper">
                         <form className='productcard-btn-count'>
-                            <p className='product-count'>{quantity}</p>
+                            <p className='product-count'>{quantitys}</p>
                             <div className='count_prodcut'>
                                 <button onClick={(e) => {
                                     e.preventDefault()
@@ -74,39 +124,25 @@ function Product(props) {
                     <span className="product-line"></span>
                     <div className="product-addition">
                         <p className="product-title">Сделать еще вкуснее</p>
-                        <div className="addition-item">
-                            <p className="addition-item-name">Тигровые креветки 60 г</p>
-                            <p className="addition-item-price">450 ₽</p>
-                            <label className="addition-item-input">
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
+                        {additions_array.map(({ id, value, name }, index) =>
+                            <div className="addition-item" key={id}>
+                                <p className="addition-item-name">{name}</p>
+                                <p className="addition-item-price">{value} ₽</p>
+                                <label className="addition-item-input">
+                                    <input
+                                        id={id}
+                                        type="checkbox"
+                                        value={value}
+                                        name={name}
+                                        onChange={(e) => checkboxHandler(e, index)}
+                                        checked={selected_product.filter((item) => item.id === id).length > 0 ? true : false}
+                                    />
+                                    <span className="checkmark"></span>
+                                </label>
+                            </div>)
+                        }
 
-                        </div>
-                        <div className="addition-item">
-                            <p className="addition-item-name">Томаты / паприка</p>
-                            <p className="addition-item-price">80 ₽</p>
-                            <label className="addition-item-input">
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
-                        </div>
-                        <div className="addition-item">
-                            <p className="addition-item-name">Бекон</p>
-                            <p className="addition-item-price">120 ₽</p>
-                            <label className="addition-item-input">
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
-                        </div>
-                        <div className="addition-item">
-                            <p className="addition-item-name">Сыр чеддер 30 г</p>
-                            <p className="addition-item-price">80 ₽</p>
-                            <label className="addition-item-input">
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
-                        </div>
+
                     </div>
                 </div>
             </div>

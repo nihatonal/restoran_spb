@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { productsData } from '../../assets/productsData';
+import { CartContext } from "../../shared/context/CartContext";
 import ProductCard from '../components/ProductCard';
 import ProductsBar from '../components/ProductsBar';
 import Contact from '../../shared/components/Contact';
 import Product from '../components/Product';
-// [{... }, {... }, {... }]
+
 
 import './Store.css';
 function Store() {
+    const cart = useContext(CartContext);
     const navigate = useNavigate();
     const [foods, setFoods] = useState([]);
     const [foodType, setFoodType] = useState('breakfast');
@@ -41,6 +43,10 @@ function Store() {
 
                     <ProductCard key={idx} product={product} selectedProduct={(e) => {
                         setCurrentProduct(e.target.parentNode.parentNode.id)
+                        cart.items.filter(item => item.id === product.id).length !== 1 && cart.addOneToCart(product.id)
+
+
+
                     }} />
 
                 ))}

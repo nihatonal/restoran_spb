@@ -26,7 +26,8 @@ function DeliveryBar(props) {
             </div>
 
             <div className={openModal ? "cart-modal-wrapper open-modal" : "cart-modal-wrapper"}>
-
+                <h3 className="cart-modal-title">Корзина заказа</h3>
+                <p>Общая сумма заказа:</p>
             </div>
 
 
