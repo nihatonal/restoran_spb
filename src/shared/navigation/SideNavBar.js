@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom'
 import Logo from '../../assets/images/logo.png';
 import Hamburger from './Hamburger';
 import SocialBar from './SocialBar';
@@ -10,7 +10,8 @@ function SideNavBar(props) {
     return (
         <div className={props.drawerIsOpen ? `sidebar_wrapper open_sidebar` : `sidebar_wrapper ${props.className}`}>
             <div className='sidebar-header'>
-                <img src={Logo} alt='logo' />
+                <NavLink to='/'onClick={props.closeDrawer}><img src={Logo} alt='logo' /></NavLink>
+
 
                 <Hamburger
                     show={props.drawerIsOpen}

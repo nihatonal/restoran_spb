@@ -9,21 +9,24 @@ import Footer from "./shared/footer/Footer";
 
 import Store from "./Cart/page/Store";
 
+import './App.css'
 function App() {
 
 
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <MainNavigation />
-        <Routes>
-          <Route exact path="/" element={<Main />} />
-          <Route exact path="/delivery" element={<Store />} />
-          <Route exact path="/delivery/product/:pname" element={<Store />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
+    <div className="root-wrapper">
+      <CartProvider>
+        <BrowserRouter>
+          <MainNavigation />
+          <Routes>
+            <Route exact path="/" element={<Main />} />
+            <Route exact path="/delivery" element={<Store />} />
+            <Route exact path="/delivery/product/:pname" element={<Store />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </div>
   );
 }
 

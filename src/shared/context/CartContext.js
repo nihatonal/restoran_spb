@@ -30,7 +30,7 @@ export function CartProvider({ children }) {
 
     function addOneToCart(id) {
         const quantity = getProductQuantity(id);
-        
+
         if (quantity === 0) { // product is not in cart
             setCartProducts(
                 [
@@ -57,6 +57,15 @@ export function CartProvider({ children }) {
     function addAdditionsToCart(id, arr) {
         const x = cartProducts.filter(product => product.id === id)[0].additions
         x.push(arr)
+        setCartProducts(
+            cartProducts.map(
+                product =>
+                    product.id === id                                // if condition
+                        ? { ...product, additions: x } // if statement is true
+                        : product                                        // if statement is false
+            )
+        )
+
         //console.log(cartProducts)
     }
     function removeAdditionsToCart(id, addition_id) {
@@ -65,6 +74,14 @@ export function CartProvider({ children }) {
         selected_product.additions = selected_product.additions.filter(function (obj) {
             return obj.id !== addition_id;
         });
+        setCartProducts(
+            cartProducts.map(
+                product =>
+                    product.id === id                                // if condition
+                        ? { ...product, additions: selected_product.additions } // if statement is true
+                        : product                                        // if statement is false
+            )
+        )
         //console.log(cartProducts)
 
     }
@@ -103,7 +120,14 @@ export function CartProvider({ children }) {
         let totalCost = 0;
         cartProducts.map((cartItem) => {
             const productData = getProductData(cartItem.id);
-            totalCost += (productData.price * cartItem.quantity);
+            const selected_product = cartProducts.filter(product => product.id === cartItem.id)[0]
+            if (selected_product.additions) {
+                totalCost += (productData.price * cartItem.quantity + selected_product.additions.reduce((n, { price_additon }) => n + price_additon * 1, 0));
+
+            } else {
+                totalCost += (productData.price * cartItem.quantity);
+            }
+
         });
         return totalCost;
     }

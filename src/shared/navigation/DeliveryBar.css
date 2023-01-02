@@ -55,10 +55,152 @@
   top: 60px;
   width: 300px;
   height: 400px;
-  background-color: rgba(181, 149, 113, 0.7);
+  background: var(--color-secondary);
   right: -50%;
   transition: all 1s;
+  z-index: 99;
 }
 .open-modal {
   right: 70px;
+}
+.cart-modal-title {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+/**/
+.cart-modal-products {
+  max-height: 300px;
+  padding: 10px;
+}
+.cart-modal-products-wrapper {
+  max-height: 260px;
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  overflow-y: scroll;
+  display: grid;
+  row-gap: 5px;
+}
+/* width */
+.cart-modal-products-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.cart-modal-products-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.cart-modal-products-wrapper::-webkit-scrollbar-thumb {
+  background: rgb(158, 125, 87);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.cart-modal-products-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(181, 149, 113, 1);
+}
+.modal-cart-footer {
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.modal-cart-footer button {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 500;
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s;
+}
+.modal-cart-footer button:hover {
+  background-color: #fff;
+  color: var(--color-secondary);
+}
+
+.modal-cart-footer .modal-summary {
+  color: #fff;
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.cart-modal-product {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  background: #fff;
+  padding: 10px 15px 10px 10px;
+}
+.cart-modal-product img {
+  width: 44px;
+}
+.cart-modal-products .cart-modal-product-info {
+  grid-row: 2;
+  width: 90%;
+}
+.cart-modal-products .cart-modal-product-name {
+  text-align: left;
+  font-size: 11px;
+}
+.cart-modal-product-info ul {
+  list-style: disc;
+  list-style-position: inside;
+  width: 100%;
+}
+.cart-modal-product-info ul li {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.cart-modal-product-info ul li span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  color: rgb(238, 40, 40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+}
+.cart-modal-product-info ul li span:hover {
+  background-color: rgb(238, 40, 40);
+  color: #fff;
+}
+.cart-modal-quantity-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  grid-row: 1 / span 2;
+}
+.cart-modal-quantity-wrapper img {
+  width: 12px;
+}
+.product-modal-sum {
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

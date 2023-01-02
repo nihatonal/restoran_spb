@@ -17,11 +17,11 @@
   margin-left: 24px;
 }
 .menu-item-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position:relative;
-    top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 40px;
 }
 .menu-item-title {
   font-family: "Circe";
@@ -42,4 +42,67 @@
   background: #b59571;
   display: block;
   margin-left: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-content {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .menu-item {
+    width: 275px;
+    height: 180px;
+  }
+  .menu-item:nth-child(2) {
+    margin-left: 24px;
+  }
+  .menu-item-content {
+    top: 30px;
+  }
+  .menu-item-content img {
+    width: 245px;
+  }
+  .menu-item-title {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .menu-item-title::after {
+    width: 40px;
+    height: 2px;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .menu-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 500px;
+  }
+  .menu-item {
+    width: 275px;
+    height: 180px;
+  }
+  .menu-item:nth-child(2) {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+  .menu-item-content {
+    top: 30px;
+  }
+  .menu-item-content img {
+    width: 245px;
+  }
+  .menu-item-title {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .menu-item-title::after {
+    width: 40px;
+    height: 2px;
+    margin-left: 30px;
+  }
 }

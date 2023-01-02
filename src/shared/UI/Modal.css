@@ -8,7 +8,7 @@
   );
   position: fixed;
   z-index: 99;
-  left: -100%;
+  left: -1000px;
   transition: all 750ms;
   display: flex;
   justify-content: center;

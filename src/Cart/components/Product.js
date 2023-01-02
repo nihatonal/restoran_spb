@@ -64,7 +64,7 @@ function Product(props) {
         const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
-        console.log(updatedCheckedState)
+        // console.log(updatedCheckedState)
         setCheckedState(updatedCheckedState);
 
         let addition;
