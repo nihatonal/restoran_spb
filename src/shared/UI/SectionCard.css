@@ -62,7 +62,7 @@
   color: var(--color-primary);
   width: 526px;
 }
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .section-container {
     width: 100%;
     margin-top: 100px;
@@ -82,8 +82,8 @@
     font-size: 14px;
     width: 426px;
   }
-}
-@media only screen and (max-width: 400px) {
+} */
+@media only screen and (max-width: 767px) {
   .section-container {
     width: 100%;
     margin-top: 50px;
