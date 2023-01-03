@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import { CartContext } from "../context/CartContext";
 import { RiShoppingBasket2Fill } from "react-icons/ri";
@@ -13,20 +13,25 @@ function DeliveryBar(props) {
     const cart = useContext(CartContext);
     const quantity = cart.items.length;
     const [openModal, setOpenModal] = useState(false);
+    const [scroll, setScroll] = useState(false);
     // const productData = getProductData(id);
     const cartHandler = () => {
         setOpenModal(!openModal);
-        // console.log(cart.items)
-        // console.log('cart: ', cart.items.reduce((n, { quantity }) => n + quantity * 1, 0))
     }
 
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 50);
+        });
+    }, []);
     return (
-        <div className="delivery-bar-wrapper">
+        <div className={scroll ? "delivery-bar-wrapper delivery-bar-top" : "delivery-bar-wrapper"}>
             <p>Личный кабинет</p>
             <img src={Profile} alt="Profile" />
             <div className={'delivery-cart-wrapper'}
-                // onClick={cartHandler}
-                onMouseEnter={cartHandler}
+                onClick={cartHandler}
+                // onMouseEnter={cartHandler}
                 style={openModal ? { "color": '#b59571' } : null}
             >
                 {quantity > 0 && (<p >{cart.items.reduce((n, { quantity }) => n + quantity * 1, 0)}</p>)}

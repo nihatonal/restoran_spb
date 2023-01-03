@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AnimateHeight from 'react-animate-height';
 import { productsData } from '../../assets/productsData';
 import { CartContext } from "../../shared/context/CartContext";
+
 import ProductCard from '../components/ProductCard';
 import ProductsBar from '../components/ProductsBar';
-import Contact from '../../shared/components/Contact';
 import Product from '../components/Product';
 
-
+import { FaFilter } from 'react-icons/fa';
 import './Store.css';
 function Store() {
     const cart = useContext(CartContext);
@@ -15,44 +16,66 @@ function Store() {
     const [foods, setFoods] = useState([]);
     const [foodType, setFoodType] = useState('breakfast');
     const [activeBtn, setActiveBtn] = useState('false');
-    const [currentProduct, setCurrentProduct] = useState(null)
+    const [currentProduct, setCurrentProduct] = useState(null);
+    const [height, setHeight] = useState(0);
 
     useEffect(() => {
         setFoods(productsData.filter((x) => x.type === foodType))
     }, [foodType]);
 
-    // const selectedProductHandler = (e) => {
-    //     console.log(e.target.id)
-    //     setCurrentProduct(e.target.id)
-    // }
     return (
         <div className='products-container'>
+            <div onClick={() => setHeight(height === 0 ? 'auto' : 0)} className="filter-icon">
+                < FaFilter />
+            </div>
+            <AnimateHeight
+                id="example-panel"
+                duration={500}
+                height={height} // see props documentation below
+            >
+                <ProductsBar
+
+                    onClick={(e) => {
+                        console.log(e.target.id)
+                        setFoodType(e.target.id);
+                        setActiveBtn(!activeBtn);
+                        setCurrentProduct(null);
+                        setHeight(0)
+                        navigate('/delivery')
+
+                    }}
+                    active={foodType}
+                />
+            </AnimateHeight>
             <ProductsBar
+                className='display-none'
                 onClick={(e) => {
                     console.log(e.target.id)
                     setFoodType(e.target.id);
                     setActiveBtn(!activeBtn);
-                    setCurrentProduct(null)
+                    setCurrentProduct(null);
                     navigate('/delivery')
 
                 }}
                 active={foodType}
             />
-            {currentProduct ? <Product id={currentProduct} /> : <div className='products-wrapper'>
-                {productsData && foods.map((product, idx) => (
+            {
+                currentProduct ? <Product id={currentProduct} /> : <div className='products-wrapper'>
+                    {productsData && foods.map((product, idx) => (
 
-                    <ProductCard key={idx} product={product} selectedProduct={(e) => {
-                        setCurrentProduct(e.target.parentNode.parentNode.id)
-                        cart.items.filter(item => item.id === product.id).length !== 1 && cart.addOneToCart(product.id)
+                        <ProductCard key={idx} product={product} selectedProduct={(e) => {
+                            setCurrentProduct(e.target.parentNode.parentNode.id)
+                            cart.items.filter(item => item.id === product.id).length !== 1 && cart.addOneToCart(product.id)
 
 
 
-                    }} />
+                        }} />
 
-                ))}
-            </div>}
-            <Contact />
-        </div>
+                    ))}
+                </div>
+            }
+            {/* <Contact /> */}
+        </div >
     )
 }
 

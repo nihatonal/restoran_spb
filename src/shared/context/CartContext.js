@@ -1,22 +1,29 @@
 import { createContext, useState } from "react";
-import { productsArray, getProductData } from "../../Cart/components/productStore.js";
+import { getProductData } from "../../Cart/components/productStore.js";
 
 
 export const CartContext = createContext({
     items: [],
+    booking: null,
     getProductQuantity: () => { },
     addOneToCart: () => { },
     removeOneFromCart: () => { },
     deleteFromCart: () => { },
     getTotalCost: () => { },
     addAdditionsToCart: () => { },
-    removeAdditionsToCart: () => { }
+    removeAdditionsToCart: () => { },
+    modalHandler: () => { },
 });
 
 export function CartProvider({ children }) {
     const [cartProducts, setCartProducts] = useState([]);
+    const [bookingOpen, setBookingOpen] = useState(false);
 
     // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]
+    function modalHandler(x) {
+        setBookingOpen(x)
+    }
+
 
     function getProductQuantity(id) {
         const quantity = cartProducts.find(product => product.id === id)?.quantity;
@@ -134,13 +141,15 @@ export function CartProvider({ children }) {
 
     const contextValue = {
         items: cartProducts,
+        booking: bookingOpen,
         getProductQuantity,
         addOneToCart,
         removeOneFromCart,
         deleteFromCart,
         getTotalCost,
         addAdditionsToCart,
-        removeAdditionsToCart
+        removeAdditionsToCart,
+        modalHandler
     }
 
     return (

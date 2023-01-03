@@ -1,0 +1,25 @@
+[debug] [2023-01-03T10:50:26.377Z] ----------------------------------------------------------------------
+[debug] [2023-01-03T10:50:26.380Z] Command:       C:\Users\nonal\tools\nodejs\node.exe C:\Users\nonal\tools\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-03T10:50:26.381Z] CLI Version:   11.19.0
+[debug] [2023-01-03T10:50:26.381Z] Platform:      win32
+[debug] [2023-01-03T10:50:26.381Z] Node Version:  v17.8.0
+[debug] [2023-01-03T10:50:26.382Z] Time:          Tue Jan 03 2023 13:50:26 GMT+0300 (Moscow Standard Time)
+[debug] [2023-01-03T10:50:26.383Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-03T10:50:26.482Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-03T10:50:26.483Z] > authorizing via signed-in user (onalnihat1986@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\nonal\Projects\restoran_spb
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

@@ -8,8 +8,8 @@
   );
   position: fixed;
   z-index: 99;
-  left: -1000px;
-  transition: all 750ms;
+  left: -3000px;
+  transition: all 1s;
   display: flex;
   justify-content: center;
 }

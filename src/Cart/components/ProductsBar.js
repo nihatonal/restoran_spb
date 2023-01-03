@@ -5,7 +5,7 @@ function ProductsBar(props) {
 
 
     return (
-        <div className='product-btns-wrapper'>
+        <div className={`product-btns-wrapper ${props.className}`} style={props.style}>
             <button onClick={props.onClick} id='breakfast' className={props.active === 'breakfast' ? `product-btn active-btn` : 'product-btn'}>Завтраки</button>
             <button onClick={props.onClick} id='raw' className={props.active === 'raw' ? `product-btn active-btn` : 'product-btn'}>Raw</button>
             <button onClick={props.onClick} id='cold_snakes' className={props.active === 'cold_snakes' ? `product-btn active-btn` : 'product-btn'}>Холодные закуски</button>

@@ -1,9 +1,12 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import Modal from '../UI/Modal';
+import BookingForm from '../components/BookingForm';
 import { IoLocationSharp } from "react-icons/io5";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import './Contact.css';
 function Contact(props) {
+    const cart = useContext(CartContext)
 
     return (
         <div className="contact-container">
@@ -45,14 +48,20 @@ function Contact(props) {
                         <p className="work-schedule-item">Вск-Чт <span>с 12:00 до 23:00</span></p>
                         <p className="work-schedule-item">Пт-Сб <span>с 12:00 до 03:00</span></p>
                         <div className="contact-btns">
-                            <button className="contact-btn">Бронь столика</button>
+                            <button
+                                className="contact-btn"
+                                onClick={() => cart.modalHandler(true)}>Бронь столика</button>
                             <button className="contact-btn">Задать вопрос</button>
                         </div>
                     </div>
                 </div>
+                <Modal showModal={cart.booking} >
+                    <BookingForm Close={() => cart.modalHandler(false)} />
+                </Modal>
             </div>
 
-        </div>
+
+        </div >
     );
 }
 

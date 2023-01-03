@@ -9,14 +9,13 @@
   align-items: flex-start;
   justify-content: space-around;
 }
-
+/* thumbnail*/
 .product-thumbnail {
   width: 416px;
   height: 317px;
   position: relative;
   margin-right: 134px;
 }
-/* d */
 .product-thumbnail .image-gallery-slides {
   width: 416px;
 
@@ -216,4 +215,137 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 400px) {
+  .product-container {
+    width: 100%;
+    margin-top: 0;
+  }
+  .product-wrapper {
+    margin-left: 0;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+  /* thumbnail*/
+  .product-thumbnail {
+    width: 325px;
+    height: 350px;
+    position: relative;
+    margin-right: 0;
+  }
+  .product-thumbnail .image-gallery-slides {
+    width: 325px;
+    margin: 0 auto;
+  }
+  .image-gallery-slide {
+    object-fit: contain;
+  }
+
+  .product-thumbnail .image-gallery-thumbnails {
+    padding: 0;
+  }
+  .product-thumbnail .image-gallery-thumbnails-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+  .product-thumbnail .image-gallery-thumbnail-inner {
+    width: 104px;
+    height: 73px;
+  }
+  .image-gallery-thumbnail + .image-gallery-thumbnail {
+    margin: 0;
+  }
+  .product-thumbnail .image-gallery-thumbnail-image {
+    width: 104px;
+    height: 73px;
+  }
+  .product-thumbnail .image-gallery-thumbnail {
+    border: none;
+    cursor: pointer;
+    width: 104px;
+    height: 73px;
+  }
+
+  .product-line {
+    opacity: 0.3;
+    height: 1px;
+    background-color: var(--color-primary);
+    display: block;
+    margin: 25px 0;
+  }
+  .product-line:nth-last-child(2) {
+    margin: 25px 0;
+  }
+  .product-title {
+    font-size: 18px;
+  }
+  .product-price-info {
+    font-size: 16px;
+  }
+  .product-price-info span {
+    font-size: 12px;
+  }
+  .product-quantity {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+  .product-addition {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 10px;
+  }
+  .product-addition .product-title {
+    margin-bottom: 5px;
+  }
+  .addition-item-name {
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .addition-item-price {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .product-quantity-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .product_content .productcard-btn {
+    height: 44px;
+    width: 151px;
+    margin-left: 20px;
+  }
+  .product_content .productcard-btn-count {
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .product_content .count_prodcut button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product_content .count_prodcut .product-count-arrow:first-child {
+    margin-top: 5px;
+  }
+
+  .addition-item {
+    width: 306px;
+    height: 46px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .addition-item-input {
+    position: absolute;
+    right: 0;
+    top: 14px;
+  }
 }

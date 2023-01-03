@@ -14,7 +14,7 @@ function Main(props) {
             <AboutUs />
             <Menu />
             <Delivery />
-            <Contact />
+            {/* <Contact /> */}
         </div>
     );
 }
