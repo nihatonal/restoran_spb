@@ -23,6 +23,7 @@ function DeliveryBar(props) {
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 50);
+            setOpenModal(false);
         });
     }, []);
     return (

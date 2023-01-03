@@ -231,7 +231,8 @@
     height: 400px;
     background: var(--color-secondary);
     right: -3000px;
-    transition: all 1s;
+    -webkit-transition: all 1s cubic-bezier(0.92, 0.38, 0.24, 0.8);
+    transition: all 1s cubic-bezier(0.92, 0.38, 0.24, 0.8);
     z-index: 99;
   }
   .open-modal {
