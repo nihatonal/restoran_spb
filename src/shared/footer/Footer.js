@@ -10,7 +10,7 @@ function Footer(props) {
     return (
         <div className='footer-container'>
             <div className="footer-wrapper">
-                <img src={Logo} alt="logo" />
+                <img className='footer-logo' src={Logo} alt="logo" />
                 <p className='footer-item'>Политика конфиденциальности</p>
                 <div className="footer-cards-wrapper">
                     <img src={Visa} alt="visa" />

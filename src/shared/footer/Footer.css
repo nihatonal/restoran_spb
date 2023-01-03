@@ -62,13 +62,24 @@
   }
   .footer-wrapper {
     height: 134px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .footer-logo {
+    grid-row: 1 / span 2;
+    margin-top: auto;
   }
   .footer-item {
     font-size: 12px;
+    text-align: right;
   }
   .footer-cards-wrapper {
     width: 140px;
     margin: 0;
+    margin-left: auto;
+  }
+  .footer-item:nth-last-child(1) {
+    grid-column: 1 / span 2;
+    text-align: center;
   }
 }
