@@ -89,7 +89,7 @@
     margin-top: 50px;
   }
   .section-suptitle {
-    font-size: 18px;
+    font-size: 24px;
   }
   .section-suptitle span {
     width: 50px;
@@ -104,13 +104,14 @@
     margin-top: 48px;
   }
   .section-title {
-    font-size: 18px;
+    font-size: 22px;
     width: 200px;
     margin-right: 40px;
   }
 
   .section-desc {
-    font-size: 12px;
-    width: 226px;
+    font-size: 14px;
+    width: 100%;
+    text-align: justify;
   }
 }

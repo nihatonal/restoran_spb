@@ -32,7 +32,7 @@
   color: white;
   font-size: 34px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1100px) {
   .footer-container {
     background: var(--color-primary);
     padding-top: 35px;
@@ -53,14 +53,15 @@
     margin-top: 10px;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 767px) {
   .footer-container {
-    height: 200px;
+    height: 134px;
     background: var(--color-primary);
-    padding-top: 35px;
+    padding-top: 0;
+    padding: 10px 0;
   }
   .footer-wrapper {
-    height: 46px;
+    height: 134px;
     flex-wrap: wrap;
   }
   .footer-item {
@@ -68,6 +69,6 @@
   }
   .footer-cards-wrapper {
     width: 140px;
-    margin: 10px 0;
+    margin: 0;
   }
 }
