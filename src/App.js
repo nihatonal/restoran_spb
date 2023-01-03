@@ -20,8 +20,8 @@ function App() {
           <MainNavigation />
           <Routes>
             <Route exact path="/" element={<Main />} />
-            <Route exact path="/delivery" element={<Store />} />
-            <Route exact path="/delivery/product/:pname" element={<Store />} />
+            <Route exact path="/delivery/:fname" element={<Store />} />
+            <Route exact path="/delivery/:fname/:pname" element={<Store />} />
           </Routes>
           <Contact />
           <Footer />

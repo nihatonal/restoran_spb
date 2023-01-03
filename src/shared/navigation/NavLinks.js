@@ -19,7 +19,7 @@ function NavLinks(props) {
                 className={({ isActive }) =>
                     isActive ? "nav-item active-nav-item" : "nav-item"
                 }
-                to="/delivery"
+                to="/delivery/breakfast"
                 onClick={props.closeDrawer}
             >
                 Доставка

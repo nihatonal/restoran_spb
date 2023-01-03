@@ -50,4 +50,7 @@
     border-bottom: 3px solid transparent;
     width: 50%;
   }
+  .active-btn {
+    border-bottom: 3px solid var(--color-secondary);
+  }
 }

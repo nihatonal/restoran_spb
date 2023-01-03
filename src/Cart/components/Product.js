@@ -5,6 +5,7 @@ import { getProductData } from "./productStore";
 import Arrow_up from '../../assets/icons/arrow_up.svg';
 import Arrow_down from '../../assets/icons/arrow_down.svg'
 import Thumbnails from '../../shared/UI/Thumbnails';
+import { AiFillCloseCircle } from "react-icons/ai";
 import './Product.css';
 function Product(props) {
 
@@ -85,7 +86,9 @@ function Product(props) {
     return (
         <div className="product-container">
             <div className="product-wrapper">
+
                 <div className="product-thumbnail">
+                    <div onClick={props.close} className="close-icon"><AiFillCloseCircle /></div>
                     <Thumbnails images={images} />
                 </div>
                 <div className="product_content">

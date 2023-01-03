@@ -3,7 +3,7 @@ import React from 'react';
 import './ProductsBar.css'
 function ProductsBar(props) {
 
-
+console.log(props.active)
     return (
         <div className={`product-btns-wrapper ${props.className}`} style={props.style}>
             <button onClick={props.onClick} id='breakfast' className={props.active === 'breakfast' ? `product-btn active-btn` : 'product-btn'}>Завтраки</button>

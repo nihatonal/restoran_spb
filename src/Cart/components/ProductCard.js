@@ -25,7 +25,7 @@ function ProductCard(props) { // props.product is the product we are selling
     }
     return (
         <div className='productcard-wrapper' id={product.id}>
-            <NavLink to={`/delivery/product/${getFileName(product.title)}`} onClick={props.selectedProduct}>
+            <NavLink to={`/delivery/${product.type}/${getFileName(product.title)}`} onClick={props.selectedProduct}>
                 <img src={product.image} alt={product.title} />
             </NavLink>
 

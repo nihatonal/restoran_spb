@@ -36,12 +36,11 @@ function Store() {
                 <ProductsBar
 
                     onClick={(e) => {
-                        console.log(e.target.id)
                         setFoodType(e.target.id);
                         setActiveBtn(!activeBtn);
                         setCurrentProduct(null);
                         setHeight(0)
-                        navigate('/delivery')
+                        navigate(`/delivery/${e.target.id}`)
 
                     }}
                     active={foodType}
@@ -60,19 +59,33 @@ function Store() {
                 active={foodType}
             />
             {
-                currentProduct ? <Product id={currentProduct} /> : <div className='products-wrapper'>
-                    {productsData && foods.map((product, idx) => (
+                currentProduct ?
+                    <Product
+                        id={currentProduct}
+                        close={() => {
+                            console.log('asd')
+                            setCurrentProduct(null)
+                            navigate(`/delivery/${foodType}`)
+                        }}
+                    />
+                    :
+                    <div className='products-wrapper'>
+                        {productsData && foods.map((product, idx) => (
 
-                        <ProductCard key={idx} product={product} selectedProduct={(e) => {
-                            setCurrentProduct(e.target.parentNode.parentNode.id)
-                            cart.items.filter(item => item.id === product.id).length !== 1 && cart.addOneToCart(product.id)
+                            <ProductCard
+                                key={idx}
+                                product={product}
+                                selectedProduct={(e) => {
+                                    setCurrentProduct(e.target.parentNode.parentNode.id)
+                                    cart.items.filter(item => item.id === product.id).length !== 1 && cart.addOneToCart(product.id)
 
 
 
-                        }} />
+                                }}
+                            />
 
-                    ))}
-                </div>
+                        ))}
+                    </div>
             }
             {/* <Contact /> */}
         </div >
