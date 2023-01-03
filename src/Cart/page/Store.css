@@ -13,10 +13,11 @@
 .filter-icon {
   display: none;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 767px) {
   .products-container {
     padding-left: 0;
     position: relative;
+    margin-top: 110px;
   }
   .display-none {
     display: none;
@@ -27,7 +28,6 @@
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
-
   }
   .products-container .contact-wrapper {
     width: 85%;
@@ -35,8 +35,11 @@
   }
   .filter-icon {
     display: block;
+    position: absolute;
+    top:-35px;
     color: var(--color-secondary);
     padding-left: 15px;
     cursor: pointer;
+    z-index: 25;
   }
 }
