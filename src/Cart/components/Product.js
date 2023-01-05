@@ -43,23 +43,7 @@ function Product(props) {
 
     useEffect(() => {
         setQuantity(quantity_ || 0)
-    }, [quantity_])
-
-    const images = [
-        {
-            original: `http://localhost:3000${productData.image}`,
-            thumbnail: `http://localhost:3000${productData.image}`,
-        },
-        {
-            original: `http://localhost:3000${productData.image}`,
-            thumbnail: `http://localhost:3000${productData.image}`,
-        },
-        {
-            original: `http://localhost:3000${productData.image}`,
-            thumbnail: `http://localhost:3000${productData.image}`,
-        }
-    ];
-
+    }, [quantity_]);
 
     const checkboxHandler = (e, position) => {
         const updatedCheckedState = checkedState.map((item, index) =>
@@ -88,8 +72,8 @@ function Product(props) {
             <div className="product-wrapper">
 
                 <div className="product-thumbnail">
-                    <div onClick={props.close} className="close-icon"><AiFillCloseCircle /></div>
-                    <Thumbnails images={images} />
+                    <div onClick={props.close} className="product-modal-close-icon"><AiFillCloseCircle /></div>
+                    <Thumbnails images={productData.images} />
                 </div>
                 <div className="product_content">
                     <p className="product-title">{productData.title}</p>

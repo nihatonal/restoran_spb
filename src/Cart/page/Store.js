@@ -49,11 +49,11 @@ function Store() {
             <ProductsBar
                 className='display-none'
                 onClick={(e) => {
-                    console.log(e.target.id)
                     setFoodType(e.target.id);
                     setActiveBtn(!activeBtn);
                     setCurrentProduct(null);
-                    navigate('/delivery')
+                    setHeight(0)
+                    navigate(`/delivery/${e.target.id}`)
 
                 }}
                 active={foodType}

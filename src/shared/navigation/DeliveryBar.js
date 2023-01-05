@@ -29,7 +29,7 @@ function DeliveryBar(props) {
     return (
         <div className={scroll ? "delivery-bar-wrapper delivery-bar-top" : "delivery-bar-wrapper"}>
             <p>Личный кабинет</p>
-            <img src={Profile} alt="Profile" />
+            <img src={Profile} alt="Profile" className='profile-icon'/>
             <div className={'delivery-cart-wrapper'}
                 onClick={cartHandler}
                 // onMouseEnter={cartHandler}
